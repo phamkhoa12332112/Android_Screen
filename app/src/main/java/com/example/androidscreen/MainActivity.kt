@@ -44,14 +44,15 @@ class MainActivity : ComponentActivity() {
 fun AndroidScreen() {
     Column(
         modifier = Modifier
-            .height(510.dp)
+//            .height(510.dp)
             .fillMaxHeight()
             .fillMaxWidth()
             .background(Color(0, 58, 74)),
     ) {
         Column(
             modifier = Modifier
-                .height(340.dp)
+//                .height(340.dp)
+                .weight(3f)
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
@@ -79,7 +80,8 @@ fun AndroidScreen() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(170.dp)
+//                .height(170.dp)
+                .weight(1f)
                 .padding(start = 50.dp)
         ) {
             Row(
