@@ -18,6 +18,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.VectorPainter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -87,38 +89,24 @@ fun AndroidScreen() {
 
             Divider(color = Color(0xFF3ddc84), thickness = 1.dp)
 
-            Row(
-                modifier = Modifier
-                    .padding(start = 50.dp, top = 10.dp, bottom = 10.dp)
-
-            ){
-
-                Icon(Icons.Rounded.Phone, contentDescription = null, tint = Color(0xFF3ddc84))
-                Spacer(modifier = Modifier.padding(start = 20.dp))
-                InformationBottom(title = "+11 (123) 444 555 666")
-            }
+            InformationRow(
+                text = "+11 (123) 444 555 666",
+                painter = rememberVectorPainter(Icons.Rounded.Phone)
+            )
 
             Divider(color = Color(0xFF3ddc84), thickness = 1.dp)
 
-            Row(
-                modifier = Modifier
-                    .padding(start = 50.dp,  top = 10.dp, bottom = 10.dp)
-            ) {
-                Icon(Icons.Rounded.Share, contentDescription = null, tint = Color(0xFF3ddc84))
-                Spacer(modifier = Modifier.padding(start = 20.dp))
-                InformationBottom(title = "@AndroidDev")
-            }
+            InformationRow(
+                text = "@AndroidDev",
+                painter = rememberVectorPainter(Icons.Rounded.Share)
+            )
 
             Divider(color = Color(0xFF3ddc84), thickness = 1.dp)
 
-            Row(
-                modifier = Modifier
-                    .padding(start = 50.dp,  top = 10.dp)
-            ) {
-                Icon(Icons.Rounded.Email, contentDescription = null, tint = Color(0xFF3ddc84))
-                Spacer(modifier = Modifier.padding(start = 20.dp))
-                InformationBottom(title = "jen.doe@android.com")
-            }
+            InformationRow(
+                text = "jen.doe@android.com",
+                painter = rememberVectorPainter(Icons.Rounded.Email)
+            )
         }
     }
 }
@@ -131,6 +119,24 @@ private fun InformationBottom(
         text = title,
         color = Color.White
     )
+}
+
+@Composable
+private fun InformationRow(
+    text: String,
+    painter: VectorPainter,
+){
+    Row(
+        modifier = Modifier
+            .padding(start = 50.dp,  top = 10.dp, bottom = 10.dp)
+    ) {
+        Icon(
+            painter = painter,
+            contentDescription = null,
+            tint = Color(0xFF3ddc84))
+        Spacer(modifier = Modifier.padding(start = 20.dp))
+        InformationBottom(title = text)
+    }
 }
 
 @Preview(showBackground = true)
