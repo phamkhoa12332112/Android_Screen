@@ -74,7 +74,7 @@ fun AndroidScreen() {
             )
             Text(
                 text = "Android Developer Extraordinaire",
-                fontSize = 16.sp,
+                fontSize = 20.sp,
                 color = Color(0xFF3ddc84)
             )
         }
@@ -83,11 +83,13 @@ fun AndroidScreen() {
                 .fillMaxWidth()
 //                .height(170.dp)
                 .weight(1f)
-                .padding(start = 50.dp)
         ) {
+
+            Divider(color = Color(0xFF3ddc84), thickness = 1.dp)
+
             Row(
                 modifier = Modifier
-                    .padding(top = 10.dp, bottom = 10.dp)
+                    .padding(start = 50.dp, top = 10.dp, bottom = 10.dp)
 
             ){
 
@@ -95,16 +97,24 @@ fun AndroidScreen() {
                 Spacer(modifier = Modifier.padding(start = 20.dp))
                 InformationBottom(title = "+11 (123) 444 555 666")
             }
-            Divider(color = Color.Blue, thickness = 1.dp)
+
+            Divider(color = Color(0xFF3ddc84), thickness = 1.dp)
+
             Row(
                 modifier = Modifier
-                    .padding(bottom = 10.dp)
+                    .padding(start = 50.dp,  top = 10.dp, bottom = 10.dp)
             ) {
                 Icon(Icons.Rounded.Share, contentDescription = null, tint = Color(0xFF3ddc84))
                 Spacer(modifier = Modifier.padding(start = 20.dp))
                 InformationBottom(title = "@AndroidDev")
             }
-            Row() {
+
+            Divider(color = Color(0xFF3ddc84), thickness = 1.dp)
+
+            Row(
+                modifier = Modifier
+                    .padding(start = 50.dp,  top = 10.dp)
+            ) {
                 Icon(Icons.Rounded.Email, contentDescription = null, tint = Color(0xFF3ddc84))
                 Spacer(modifier = Modifier.padding(start = 20.dp))
                 InformationBottom(title = "jen.doe@android.com")
