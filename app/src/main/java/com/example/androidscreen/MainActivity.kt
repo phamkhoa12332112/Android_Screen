@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -94,6 +95,7 @@ fun AndroidScreen() {
                 Spacer(modifier = Modifier.padding(start = 20.dp))
                 InformationBottom(title = "+11 (123) 444 555 666")
             }
+            Divider(color = Color.Blue, thickness = 1.dp)
             Row(
                 modifier = Modifier
                     .padding(bottom = 10.dp)
